@@ -156,7 +156,7 @@ if (this.innerHTML === questions[currentQuestion - 1].answer) {
 submitButtonEl.setAttribute("class","container");
   score.setAttribute("value",score);
  } else {
- NewQuestion(currentQuestion);
+ CreateNewQuestion(currentQuestion);
 TimeOut = false;
  myInterval = setInterval(function() {
     if (timeleft<1) {
