@@ -186,7 +186,7 @@ function saveHighScore() {
 }
 submitButtonEl.addEventListener("click",saveHighScore);
 CreateNewQuestion(currentQuestion);
-startquiz.addEventListener("click",startQuiz);
+beginquiz.addEventListener("click",beginquiz);
 score.addEventListener("click",function() {
 cosmiccodequiz.setAttribute("class","container d-none");
 questionGoSubmit.setAttribute("class","container d-none");
