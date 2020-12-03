@@ -22,7 +22,7 @@ var currentindex = 0;
 }
 //Formed a beginquiz function
 function beginquiz () {
-  landing.setAttribute("class","container d-none");
+  beginquiz.setAttribute("class","container d-none");
 //Declare row, column, header, button variables.
  var row = null;
 var column = null;
