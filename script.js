@@ -50,7 +50,7 @@ var button = null;
 }
 var TimeOut = false;
 function CreateNewQuestion(challengequestions) {
-  //  When the header forms a new question, it give possible answrt
+  //  When the header forms a new question, it give possible answers
   cosmiccodequiz.innerHTML = "";
  row = document.createElement("div");
  row.setAttribute("class","row");
@@ -117,7 +117,7 @@ button = document.createElement("button");
  button.innerHTML = questions[currentQuestion-1].choices[i];
   column.append(button);
  button.addEventListener("click",function(){
- //  When the user clicks the anwers buttons, the message is displayed. If it is correct,  15 seconds deducted from the timer
+ //  When the user clicks the anwers buttons, the message is displayed. If it is correct,  15 seconds is deducted from the timer
   if (clickTimeout) {
   return;
    }
@@ -149,7 +149,7 @@ if (this.innerHTML === questions[currentQuestion - 1].answer) {
   }
   //Formed a TimeOut function
   TimeOut (function() {
- // When the answer is selected, it moves on to new question after timers hits 2 seconds
+ // When the answer is selected, it moves on to new question after timer hits 2 seconds
   if (currentQuestion>challengequestions) {
   //  results
    cosmiccodequiz.setAttribute("class","container d-none");
