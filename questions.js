@@ -1,5 +1,5 @@
 //Questions
-console.log("questions")
+console.log("questions");
 var questions = [
     {
         title: "Primarily, inside which tag of an HTML document do you put the JavaScript?",
