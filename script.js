@@ -1,5 +1,5 @@
 //Adia's Cosmic Code Quiz 
-
+console.log("script");
 function initalquiz() {
   var timeleft = 0;
     
