@@ -15,6 +15,9 @@ var endtimer = document.getElementById("end")
 var beginquiz = document.getElementById("begin");
 
 var highScores =[]
+ if (JSON.parse(localStorage.getItem('scores')) !== null) {
+  highScores = JSON.parse(localStorage.getItem("scores"));
+        }
 //Declaring time interval variables
 var score = 0;
 var secondsLeft = 60;
@@ -206,3 +209,8 @@ paragraph.innerHTML = "Initials: " + highScores[i].initials + "   Score: " + hig
  column2.append(paragraph);
 }
 });
+
+   }
+    
+initalquiz();
+ 
