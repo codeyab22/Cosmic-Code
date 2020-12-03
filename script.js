@@ -31,15 +31,15 @@ var button = null;
   cosmiccodequiz.setAttribute("class","container");
   var currentQuestion = 1;
   var score = 0;
-  timeleft=challengequestions * 15;
-  timeleft.setAttribute("value",timeleft);
-  //  Method for stopping the interval 
+ timeleft=challengequestions * 15;
+ timeleft.setAttribute("value",timeleft);
+ //  Method for stopping the interval 
   //Formed a setInterval function
   var myInterval = setInterval(function() {
  if (timeleft<1) { clearInterval(myInterval);
  //  When timer ends, then the user put their initials
-   cosmiccodequiz.setAttribute("class","container d-none");
-   score.setAttribute("class", "container")
+  cosmiccodequiz.setAttribute("class","container d-none");
+  score.setAttribute("class", "container")
  submitButtonEl.setAttribute("class","container");
  return;
  }
@@ -130,10 +130,10 @@ clickTimeOut = true;
 
 column = document.createElement("div");
  column.setAttribute("class","col-12");
- row.append(colEl);
+ row.append(column);
 
 var paragraph  = document.createElement("p");
-column.append(parEl);
+column.append(paragraph);
 if (this.innerHTML === questions[currentQuestion - 1].answer) {
  paragraph.innerHTML = "Yes, You got it!";
 } else {
@@ -203,6 +203,6 @@ for (i=0; i<Highscores.length; i++) {
 
  var paragraph = document.createElement("div");
 paragraph.innerHTML = "Initials: " + highScores[i].initials + "   Score: " + highScores[i].highScore;
- column2.append(parEl);
+ column2.append(paragraph);
 }
 });
