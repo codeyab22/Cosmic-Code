@@ -53,7 +53,7 @@ var button = null;
 
 }
 var TimeOut = false;
-function CreateNewQuestion(challengequestions) {
+function CreateNewQuestion(currentQuestion) {
   //  When the header forms a new question, it give possible answers
   cosmiccodequiz.innerHTML = "";
  row = document.createElement("div");
@@ -160,7 +160,7 @@ if (this.innerHTML === questions[currentQuestion - 1].answer) {
 submitButtonEl.setAttribute("class","container");
   score.setAttribute("value",score);
  } else {
- CreateNewQuestion(challengequestions);
+ CreateNewQuestion(currentQuestion);
 TimeOut = false;
  myInterval = setInterval(function() {
     if (timeleft<1) {
@@ -189,7 +189,7 @@ function saveHighScore() {
  localStorage.setItem("scores",JSON.stringify(highScores));
 }
 submitbtnel.addEventListener("click",saveHighScore);
-CreateNewQuestion(challengequestions);
+CreateNewQuestion(currentQuestion);
 startbtnel.addEventListener("click",startbutton);
 score.addEventListener("click",function() {
 cosmiccodequiz.setAttribute("class","container d-none");
