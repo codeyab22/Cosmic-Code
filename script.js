@@ -1,4 +1,5 @@
 //Adia's Cosmic Code Quiz 
+//Adia's Cosmic Code Quiz 
 console.log("script");
 function initalquiz() {
   var timeleft = 0;
@@ -9,7 +10,8 @@ var questionGoSubmit = document.getElementById("results");
 var timeleft = document.getElementById("timeleft");
 var challengequestions = document.getElementById("challengequestions.length")
 var score = document.getElementById("score");
-var submitButtonEl = document.getElementById("submit-initials");
+var startbtnel = document.getElementById("start button");
+var submitbtnel = document.getElementById("submit-initials");
 var starttimer = document.getElementById("starttimer");
 var endtimer = document.getElementById("end")
 var beginquiz = document.getElementById("begin");
@@ -27,7 +29,7 @@ var currentindex = 0;
 function beginquiz () {
   beginquiz.setAttribute("class","container d-none");
 //Declare row, column, header, button variables.
- var row = null;
+var row = null;
 var column = null;
 var header = null;
 var button = null;
@@ -43,7 +45,7 @@ var button = null;
  //  When timer ends, then the user put their initials
   cosmiccodequiz.setAttribute("class","container d-none");
   score.setAttribute("class", "container")
- submitButtonEl.setAttribute("class","container");
+ submitbtnel.setAttribute("class","container");
  return;
  }
  timeleft = timeleft - 1;
@@ -94,11 +96,11 @@ var column2 = document.createElement("div");
 column.setAttribute("class","col-12");
 row.append(column2);
 
- button = document.createElement("button");
+button = document.createElement("button");
 button.setAttribute("class","btn btn-primary");
   button.setAttribute("type","button");
  button.innerHTML = questions[currentQuestion-1].choices[i];
-  column2.append(buttonEl);
+  column2.append(button);
  button.addEventListener("click",function(){
  //  When the user clicks one of the answer buttons, then it would have a display message "Yes! You got it!" If incorrect, then the seconds would be deducted 
  if (clickTimeout) {
@@ -111,7 +113,7 @@ row = document.createElement("div");
 row.setAttribute("class","row border-top"); column.append(row);
 
 column = document.createElement("div");
- column.setAttribute("class","col-12");
+column.setAttribute("class","col-12");
 row.append(column);
 
 button = document.createElement("button");
@@ -129,7 +131,7 @@ clickTimeOut = true;
   var column = cosmiccodequiz.children[0].children[1];
   var row = document.createElement("div");
   row.setAttribute("class","row border-top");
- column.append(rowEl);
+ column.append(row);
 
 column = document.createElement("div");
  column.setAttribute("class","col-12");
@@ -159,7 +161,7 @@ if (this.innerHTML === questions[currentQuestion - 1].answer) {
 submitButtonEl.setAttribute("class","container");
   score.setAttribute("value",score);
  } else {
- CreateNewQuestion(currentQuestion);
+ CreateNewQuestion(challengequestions);
 TimeOut = false;
  myInterval = setInterval(function() {
     if (timeleft<1) {
@@ -187,9 +189,9 @@ function saveHighScore() {
  console.log(highScores);
  localStorage.setItem("scores",JSON.stringify(highScores));
 }
-submitButtonEl.addEventListener("click",saveHighScore);
-CreateNewQuestion(currentQuestion);
-beginquiz.addEventListener("click",beginquiz);
+submitbtnel.addEventListener("click",saveHighScore);
+CreateNewQuestion(challengequestions);
+startbtnel.addEventListener("click",startbutton);
 score.addEventListener("click",function() {
 cosmiccodequiz.setAttribute("class","container d-none");
 questionGoSubmit.setAttribute("class","container d-none");
@@ -198,11 +200,11 @@ var column = document.getElementById("highscore-table");
 for (i=0; i<Highscores.length; i++) {
  var row = document.createElement("div");
  row.setAttribute("class","row mb-1");
- column.append(rowEl);
+ column.append(row);
 
  var column2 = document.createElement("div");
  column2.setAttribute("class","col-12 text-center");
- row.append(colEl2);
+ row.append(column2);
 
  var paragraph = document.createElement("div");
 paragraph.innerHTML = "Initials: " + highScores[i].initials + "   Score: " + highScores[i].highScore;
@@ -213,4 +215,3 @@ paragraph.innerHTML = "Initials: " + highScores[i].initials + "   Score: " + hig
    }
     
 initalquiz();
- 
