@@ -9,7 +9,6 @@ var questionGoSubmit = document.getElementById("results");
 var timeleft = document.getElementById("timeleft");
 var challengequestions = document.getElementById("challengequestions.length")
 var score = document.getElementById("score");
-var startbtnel = document.getElementById("startbutton");
 var submitbtnel = document.getElementById("submit-initials");
 var starttimer = document.getElementById("starttimer");
 var endtimer = document.getElementById("end")
