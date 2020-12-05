@@ -25,7 +25,7 @@ var secondsLeft = 60;
 var currentindex = 0;
 }
 //Formed a beginquiz function
-function beginquiz () {
+function startquiz () {
   beginquiz.setAttribute("class","container d-none");
 //Declare row, column, header, button variables.
 var row = null;
