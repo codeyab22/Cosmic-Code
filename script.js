@@ -10,7 +10,6 @@ var timeleft = document.getElementById("timeleft");
 var challengequestions = document.getElementById("challengequestions.length")
 var score = document.getElementById("score");
 var startbutton = document.getElementById("startbutton");
-var submitbtnel = document.getElementById("submit-initials");
 var starttimer = document.getElementById("starttimer");
 var endtimer = document.getElementById("end")
 var beginquiz = document.getElementById("begin");
@@ -32,7 +31,7 @@ startbtnbutton.addEventListener("click", beginquiz);
 
 function submitbtnel() {
  var submitbtnbutton = document.getElementById("id-of-dom-item");
-    submitbtnel.addEventListener("click", bubmit-initials)
+    submitbtnel.addEventListener("click", submit-initials);
 }
 
 //Formed a startquiz function
