@@ -200,6 +200,7 @@ function saveHighScore() {
  localStorage.setItem("scores",JSON.stringify(highScores));
 }
 CreateNewQuestion(currentQuestion);
+submitbtnel.addEventListener("click,submit-initials);
 startbtnel.addEventListener("click",startbutton);
 score.addEventListener("click",function() {
 cosmiccodequiz.setAttribute("class","container d-none");
