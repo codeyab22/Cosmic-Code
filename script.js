@@ -7,8 +7,9 @@ var timeleft = 0;
 var cosmiccodequiz  = document.getElementById("cosmic code quiz");
 var questionGoSubmit = document.getElementById("results");
 var timeleft = document.getElementById("timeleft");
-var challengequestions = document.getElementById("challengequestions.length")
+var challengequestions = document.getElementById("challengequestions.length");
 var score = document.getElementById("score");
+var submitbtnbel =document.getElementById("submit-initials");
 var startbutton = document.getElementById("startbutton");
 var starttimer = document.getElementById("starttimer");
 var endtimer = document.getElementById("end")
@@ -198,7 +199,7 @@ function saveHighScore() {
  console.log(highScores);
  localStorage.setItem("scores",JSON.stringify(highScores));
 }
-submitbtnel.addEventListener("click",saveHighScore);
+submitbtnel.addEventListener("click",score)
 CreateNewQuestion(currentQuestion);
 startbtnel.addEventListener("click",startbutton);
 score.addEventListener("click",function() {
