@@ -27,7 +27,7 @@ var currentindex = 0;
 // Formed a start button function and declared startbutton variable with an ID element
 function startbutton() {
 var startbtnbutton = document.getElementById("id-of-dom-item");
-startbtnbutton.addEventListener("click", startbutton);  
+startbtnbutton.addEventListener("click", beginquiz);  
 }
 
 function submitbtnel() {
