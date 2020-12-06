@@ -29,6 +29,12 @@ function startbutton() {
 var startbtnbutton = document.getElementById("id-of-dom-item");
 startbtnbutton.addEventListener("click", startbutton);  
 }
+
+function submitbtnel() {
+ var submitbtnbutton = document.getElementById("id-of-dom-item");
+    submitbtnel.addEventListener("click", bubmit-initials)
+}
+
 //Formed a startquiz function
 function startquiz () {
   beginquiz.setAttribute("class","container d-none");
