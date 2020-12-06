@@ -32,7 +32,7 @@ startbtnbutton.addEventListener("click", beginquiz);
 
 function submitbtnel() {
  var submitbtnbutton = document.getElementById("id-of-dom-item");
-    submitbtnel.addEventListener("click", submit-initials);
+    submitbtnel.addEventListener("click", results);
 }
 
 //Formed a startquiz function
@@ -199,7 +199,6 @@ function saveHighScore() {
  console.log(highScores);
  localStorage.setItem("scores",JSON.stringify(highScores));
 }
-submitbtnel.addEventListener("click",score)
 CreateNewQuestion(currentQuestion);
 startbtnel.addEventListener("click",startbutton);
 score.addEventListener("click",function() {
