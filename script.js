@@ -168,7 +168,7 @@ if (this.innerHTML === questions[currentQuestion - 1].answer) {
   if (currentQuestion>challengequestions) {
   //  results
    cosmiccodequiz.setAttribute("class","container d-none");
-submitbtnel.setAttribute("class","container");
+submitbutton.setAttribute("class","container");
   score.setAttribute("value",score);
  } else {
  CreateNewQuestion(currentQuestion);
