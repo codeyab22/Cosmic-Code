@@ -12,6 +12,7 @@ var score = document.getElementById("score");
 var submitbutton = document.getElementById("submit-initials");
 var startbutton = document.getElementById("startbutton");
 var starttimer = document.getElementById("starttimer");
+var currentQuestion = document.getElementById("newquestion");
 var endtimer = document.getElementById("end")
 var beginquiz = document.getElementById("begin");
 
