@@ -32,7 +32,7 @@ startbtnbutton.addEventListener("click", beginquiz);
 
 function submitbutton() {
  var submitbutton = document.getElementById("id-of-dom-item");
-    submitbtnel.addEventListener("click",submit-initials);
+    submitbutton.addEventListener("click",submit-initials);
 }
 
 //Formed a startquiz function
