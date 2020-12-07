@@ -55,7 +55,7 @@ var button = null;
  //  When timer ends, then the user put their initials
   cosmiccodequiz.setAttribute("class","container d-none");
   score.setAttribute("class", "container")
- submitbtnel.setAttribute("class","container");
+ submitbutton.setAttribute("class","container");
  return;
  }
  timeleft = timeleft - 1;
