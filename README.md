@@ -6,4 +6,4 @@ My motivation is to make sure that everything is in order with logic and accurat
 
 Thi
 
-Check out it and play this code game quiz: https://codeyab22.github.io/Cosmic-Code-Quiz/the 
+Check out it and play this code game quiz: 
