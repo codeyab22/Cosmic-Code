@@ -27,8 +27,8 @@ var currentindex = 0;
 }
 // Formed a start button function and declared startbutton variable with an ID element
 function startbutton() {
-var startbtnbutton = document.getElementById("id-of-dom-item");
-startbtnbutton.addEventListener("click", beginquiz);  
+var startbutton = document.getElementById("id-of-dom-item");
+startbutton.addEventListener("click", startquiz);  
 }
 
 function submitbutton() {
@@ -202,7 +202,7 @@ function saveHighScore() {
 }
 CreateNewQuestion(currentQuestion);
 var submitbutton = document.getElementById("submit-initials");
-startbtnel.addEventListener("click",startbutton);
+startbutton.addEventListener("click",startbutton);
 score.addEventListener("click",function() {
 cosmiccodequiz.setAttribute("class","container d-none");
 questionGoSubmit.setAttribute("class","container d-none");
