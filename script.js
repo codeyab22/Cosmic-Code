@@ -111,10 +111,10 @@ row.append(column2);
 
 button = document.createElement("button");
 button.setAttribute("class","btn btn-primary");
- button.setAttribute("type","button");
- button.innerHTML = questions[currentquestion-1].choices[i];
- column2.append(button);
- button.addEventListener("click",function(){
+button.setAttribute("type","button");
+button.innerHTML = questions[currentquestion-1].choices[i];
+column2.append(button);
+button.addEventListener("click",function(){
 
  //  When the user clicks one of the answer buttons, then it would have a display message "Yes! You got it!" If incorrect, then the seconds would be deducted 
  if (clickTimeout) {
@@ -131,10 +131,10 @@ column.setAttribute("class","col-12");
 row.append(column);
 
 button = document.createElement("button");
- button.setAttribute("class","btn btn-primary");
+button.setAttribute("class","btn btn-primary");
  button.setAttribute("type","button");
  button.innerHTML = questions[currentquestion-1].choices[i];
-  column.append(button);
+ column.append(button);
  button.addEventListener("click",function(){
  
  //  When the user clicks the anwers buttons, the message is displayed. If it is correct,  15 seconds is deducted from the timer
@@ -145,7 +145,7 @@ button = document.createElement("button");
  clickTimeOut = true;
  clearInterval(myInterval);
  var column = cosmiccodequiz.children[0].children[1];
-  var row = document.createElement("div");
+ var row = document.createElement("div");
  row.setAttribute("class","row border-top");
  column.append(row);
 
