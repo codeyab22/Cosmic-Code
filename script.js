@@ -72,7 +72,7 @@ var button = null;
 }
 var TimeOut = false;
 function CreateNewQuestion(currentQuestion) {
-  //  When the header forms a new question, it give possible answers
+ //  When the header forms a new question, it give possible answers
   cosmiccodequiz.innerHTML = "";
  row = document.createElement("div");
  row.setAttribute("class","row");
@@ -86,16 +86,16 @@ function CreateNewQuestion(currentQuestion) {
  column.setAttribute("class","col-12 col-sm-8");
  row.append(column);
 
-  column = document.createElement("div");
+column = document.createElement("div");
 column.setAttribute("class","col-0 col-sm-2");
-  row.append(column);
+ row.append(column);
 
 column = row.children[1];
 row = document.createElement("div");
 row.setAttribute("class","row mb-3");
 column.append(row);
 
- column = document.createElement("div");
+column = document.createElement("div");
  column.setAttribute("class","col-12");
 row.append(column);
 
@@ -145,9 +145,10 @@ button = document.createElement("button");
   if (clickTimeout) {
   return;
    }   
-clickTimeOut = true;
-  clearInterval(myInterval);
-  var column = cosmiccodequiz.children[0].children[1];
+
+ clickTimeOut = true;
+ clearInterval(myInterval);
+ var column = cosmiccodequiz.children[0].children[1];
   var row = document.createElement("div");
  row.setAttribute("class","row border-top");
  column.append(row);
@@ -177,19 +178,21 @@ if (this.innerHTML === questions[currentQuestion - 1].answer) {
  // When the answer is selected, it moves on to new question after timer hits 2 seconds
   if (currentquestion>challengequestions) {
   //  results
-   cosmiccodequiz.setAttribute("class","container d-none");
+cosmiccodequiz.setAttribute("class","container d-none");
 submitbutton.setAttribute("class","container");
   score.setAttribute("value",score);
  } else {
  CreateNewQuestion(currentquestion);
 TimeOut = false;
+
  myInterval = setInterval(function() {
-    if (timeleft<1) {
-  clearInterval(myInterval);
+if (timeleft<1) {
+clearInterval(myInterval);
  cosmiccodequiz.setAttribute("class","container d-none");
  score.setAttribute("class","container");
   return;
    }
+    
   timeleft = timeleft - 1;
  timeleft.setAttribute("value", timeleft);
  },1000);
@@ -200,32 +203,35 @@ TimeOut = false;
 
 //Formed a function saveHighScore
 function saveHighScore() {
-    var initials = document.getElementById("initials-entry");
-    var newHighScore = {
+ var initials = document.getElementById("initials-entry");
+ var newHighScore = {
   initials: initialsEl.value,
   highScore: score
   };
- console.log(newHighScore);
+
+   console.log(newHighScore);
  highScores.push(newHighScore);
  console.log(highScores);
  localStorage.setItem("scores",JSON.stringify(highScores));
 }
+
 CreateNewQuestion(currentquestion);
 var submitbutton = document.getElementById("submit-initials");
 cosmiccodequiz.setAttribute("class","container d-none");
 questionGoSubmit.setAttribute("class","container d-none");
 score.setAttribute("class","container");
+
 var column = document.getElementById("highscore-table");
 for (i=0; i<Highscores.length; i++) {
  var row = document.createElement("div");
  row.setAttribute("class","row mb-1");
  column.append(row);
 
- var column2 = document.createElement("div");
+var column2 = document.createElement("div");
  column2.setAttribute("class","col-12 text-center");
  row.append(column2);
 
- var paragraph = document.createElement("div");
+var paragraph = document.createElement("div");
 paragraph.innerHTML = "Initials: " + highScores[i].initials + "   Score: " + highScores[i].highScore;
  column2.append(paragraph);
   
