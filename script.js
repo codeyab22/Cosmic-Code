@@ -3,12 +3,10 @@ console.log("script");
 function initalquiz() {
 var timeleft = 0;
    
-  //Declaring variables currentquestion and score with an ID element, along with mytarget.addEventListeners.    
-var currentquestion = document.getElementById("id-of-dom-item");
-currentquestion.addEventListener("click",currentquestion)
-var score = document.getElementById("id-of-dom-item");  
- score.addEventListener("click",score)     
-    
+  //Declaring variables currentquestion and score, along with mytarget.addEventListeners.    
+var currentquestion = document.getElementById("currentquestion");
+var score = document.getElementById("score");  
+     
 //Declare the variables for Code Quiz-This is the puescode
 var cosmiccodequiz  = document.getElementById("cosmic code quiz");                                
 var questionGoSubmit = document.getElementById("results");
@@ -18,7 +16,7 @@ var submitbutton = document.getElementById("submit-initials");
 var startbutton = document.getElementById("startbutton");
 var starttimer = document.getElementById("starttimer");
 var endtimer = document.getElementById("end")
-var beginquiz = document.getElementById("begin");
+var startquiz = document.getElementById("start");
 
 var highScores =[]
  if (JSON.parse(localStorage.getItem('scores')) !== null) {
@@ -240,6 +238,8 @@ submitbutton.addEventListener("click",submit-initials);
 startbutton.addEventListener("click",startbutton);
 startbutton.addEventListener("click",startquiz);  
 score.addEventListener("click",function() {
+score.addEventListener("click",score)
+ currentquestion.addEventListener("click",currentquestion)
 })};
 
 initalquiz();
