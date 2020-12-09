@@ -5,14 +5,14 @@ var timeleft = 0;
     
 //Declare the variables for Code Quiz-This is the puescode
 var cosmiccodequiz  = document.getElementById("cosmic code quiz");
+var currentQuestion = document.getElementById("1");
+var score = document.getElementById("0");
 var questionGoSubmit = document.getElementById("results");
 var timeleft = document.getElementById("timeleft");
 var challengequestions = document.getElementById("challengequestions.length");
-var score = document.getElementById("score");
 var submitbutton = document.getElementById("submit-initials");
 var startbutton = document.getElementById("startbutton");
 var starttimer = document.getElementById("starttimer");
-var currentQuestion = document.getElementById("newquestion");
 var endtimer = document.getElementById("end")
 var beginquiz = document.getElementById("begin");
 
@@ -220,10 +220,8 @@ paragraph.innerHTML = "Initials: " + highScores[i].initials + "   Score: " + hig
 // Formed add.Eventlisteners at the bottom of my code
 submitbutton.addEventListener("click",submit-initials);
 startbutton.addEventListener("click",startbutton);
-startbutton.addEventListener("click", startquiz);  
+startbutton.addEventListener("click",startquiz);  
 score.addEventListener("click",function() {
-}
-});
+})};
 
- 
 initalquiz();
