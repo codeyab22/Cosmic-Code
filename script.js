@@ -15,7 +15,7 @@ var challengequestions = document.getElementById("challengequestions.length");
 var submitbutton = document.getElementById("submit-initials");
 var startbutton = document.getElementById("startbutton");
 var starttimer = document.getElementById("starttimer");
-var endtimer = document.getElementById("end")
+var endtimer = document.getElementById("endtimer")
 var startquiz = document.getElementById("start");
 
 var highScores =[]
