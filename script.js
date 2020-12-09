@@ -32,11 +32,11 @@ var currentindex = 0;
 
 // Formed a startbutton and submitbutton function, declaring variables with an ID element
 function startbutton() {
-var startbutton = document.getElementById("startbutton");
+var startbutton = document.getElementById("id-of-dom-item");
 }
 
 function submitbutton() {
- var submitbutton = document.getElementById("submitbutton");
+ var submitbutton = document.getElementById("id-of-dom-item");
 }
 
 //Formed a startquiz function
@@ -57,7 +57,7 @@ var button = null;
  if (timeleft<1) { clearInterval(myInterval);
  //  When timer ends, then the user put their initials
  cosmiccodequiz.setAttribute("class","container d-none");
- score.setAttribute("class", "container")
+ score.setAttribute("class","container")
  submitbutton.setAttribute("class","container");
  return;
  }
