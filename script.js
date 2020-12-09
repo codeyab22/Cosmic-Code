@@ -238,7 +238,7 @@ paragraph.innerHTML = "Initials: " + highScores[i].initials + "   Score: " + hig
 submitbutton.addEventListener("click",submitbutton);
 submitbutton.addEventListener("click",submit-initials);
 startbutton.addEventListener("click",startbutton);
-startbutton.addEventListener("click",startquiz);  
+startbutton.addEventListener("click",beginquiz);  
 score.addEventListener("click",function() {
 })};
 
