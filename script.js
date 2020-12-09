@@ -211,7 +211,6 @@ function saveHighScore() {
 }
 CreateNewQuestion(currentquestion);
 var submitbutton = document.getElementById("submit-initials");
-
 cosmiccodequiz.setAttribute("class","container d-none");
 questionGoSubmit.setAttribute("class","container d-none");
 score.setAttribute("class","container");
