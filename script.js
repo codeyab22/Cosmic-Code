@@ -22,18 +22,15 @@ var highScores =[]
         }
 //Declaring time interval variables
 var score = 0;
-var secondsLeft = 60;
+var secondsLeft = 75;
 var currentindex = 0;
 }
 // Formed a start button function and declared startbutton variable with an ID element
 function startbutton() {
 var startbutton = document.getElementById("id-of-dom-item");
-startbutton.addEventListener("click", startquiz);  
 }
-
 function submitbutton() {
  var submitbutton = document.getElementById("id-of-dom-item");
-    submitbutton.addEventListener("click",submit-initials);
 }
 
 //Formed a startquiz function
@@ -45,8 +42,7 @@ var column = null;
 var header = null;
 var button = null;
   cosmiccodequiz.setAttribute("class","container");
-  var currentQuestion = 1;
-  var score = 0;
+
  timeleft=challengequestions * 15;
  timeleft.setAttribute("value",timeleft);
  //  Method for stopping the interval 
@@ -54,8 +50,8 @@ var button = null;
   var myInterval = setInterval(function() {
  if (timeleft<1) { clearInterval(myInterval);
  //  When timer ends, then the user put their initials
-  cosmiccodequiz.setAttribute("class","container d-none");
-  score.setAttribute("class", "container")
+ cosmiccodequiz.setAttribute("class","container d-none");
+ score.setAttribute("class", "container")
  submitbutton.setAttribute("class","container");
  return;
  }
@@ -202,8 +198,7 @@ function saveHighScore() {
 }
 CreateNewQuestion(currentQuestion);
 var submitbutton = document.getElementById("submit-initials");
-startbutton.addEventListener("click",startbutton);
-score.addEventListener("click",function() {
+
 cosmiccodequiz.setAttribute("class","container d-none");
 questionGoSubmit.setAttribute("class","container d-none");
 score.setAttribute("class","container");
@@ -220,9 +215,15 @@ for (i=0; i<Highscores.length; i++) {
  var paragraph = document.createElement("div");
 paragraph.innerHTML = "Initials: " + highScores[i].initials + "   Score: " + highScores[i].highScore;
  column2.append(paragraph);
+  
+
+// Formed add.Eventlisteners at the bottom of my code
+submitbutton.addEventListener("click",submit-initials);
+startbutton.addEventListener("click",startbutton);
+startbutton.addEventListener("click", startquiz);  
+score.addEventListener("click",function() {
 }
 });
 
-   
-    
+ 
 initalquiz();
