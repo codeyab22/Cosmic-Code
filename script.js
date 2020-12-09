@@ -167,6 +167,7 @@ if (this.innerHTML === questions[currentQuestion - 1].answer) {
  if (timeleft < 0) {
  timeleft = 0;
  }}}
+                         
  ). timeleft.setAttribute("value", timeleft);
   currentquestion++;
   if (currentquestion>challengequestions.length) {
