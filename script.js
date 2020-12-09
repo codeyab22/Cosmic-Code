@@ -4,7 +4,7 @@ function initalquiz() {
 var timeleft = 0;
    
   //Declaring variables currentquestion and score with an ID element, along with mytarget.addEventListeners.    
- var currentquestion = document.getElementById("id-of-dom-item");
+var currentquestion = document.getElementById("id-of-dom-item");
 currentquestion.addEventListener("click",currentquestion)
 var score = document.getElementById("id-of-dom-item");  
  score.addEventListener("click",score)     
@@ -26,7 +26,7 @@ var highScores =[]
  }
     
 //Declaring time interval variables
-var currentquestion =1;
+var currentquestion = 1;
 var score = 0;
 var secondsLeft = 75;
 var currentindex = 0;
@@ -34,13 +34,11 @@ var currentindex = 0;
 
 // Formed a startbutton and submitbutton function, declaring variables with an ID element
 function startbutton() {
-var startbutton = document.getElementById("id-of-dom-item");
-  startbutton.addEventListener("click",startbutton)
+var startbutton = document.getElementById("startbutton");
 }
 
 function submitbutton() {
- var submitbutton = document.getElementById("id-of-dom-item");
-  submitbutton.addEventListener("click",submitbutton)
+ var submitbutton = document.getElementById("submitbutton");
 }
 
 //Formed a startquiz function
@@ -51,13 +49,13 @@ var row = null;
 var column = null;
 var header = null;
 var button = null;
-  cosmiccodequiz.setAttribute("class","container");
+ cosmiccodequiz.setAttribute("class","container");
  timeleft=challengequestions * 15;
  timeleft.setAttribute("value",timeleft);
  
  //  Method for stopping the interval 
   //Formed a setInterval function
-  var myInterval = setInterval(function() {
+ var myInterval = setInterval(function() {
  if (timeleft<1) { clearInterval(myInterval);
  //  When timer ends, then the user put their initials
  cosmiccodequiz.setAttribute("class","container d-none");
@@ -71,7 +69,7 @@ var button = null;
 
 }
 var TimeOut = false;
-function CreateNewQuestion(currentQuestion) {
+function CreateNewQuestion(currentquestion) {
  //  When the header forms a new question, it give possible answers
   cosmiccodequiz.innerHTML = "";
  row = document.createElement("div");
@@ -159,7 +157,7 @@ column = document.createElement("div");
 
 var paragraph  = document.createElement("p");
 column.append(paragraph);
-if (this.innerHTML === questions[currentQuestion - 1].answer) {
+if (this.innerHTML === questions[currentquestion - 1].answer) {
  paragraph.innerHTML = "Yes, You got it!";
 } else {
  paragraph.innerHTML = "You missed that one. Try it again.";
@@ -237,6 +235,7 @@ paragraph.innerHTML = "Initials: " + highScores[i].initials + "   Score: " + hig
  column2.append(paragraph);
   
 // Formed add.Eventlisteners at the bottom of my code
+submitbutton.addEventListener("click",submitbutton);
 submitbutton.addEventListener("click",submit-initials);
 startbutton.addEventListener("click",startbutton);
 startbutton.addEventListener("click",startquiz);  
