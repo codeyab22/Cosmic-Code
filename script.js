@@ -119,6 +119,7 @@ button.setAttribute("class","btn btn-primary");
  button.innerHTML = questions[currentquestion-1].choices[i];
  column2.append(button);
  button.addEventListener("click",function(){
+
  //  When the user clicks one of the answer buttons, then it would have a display message "Yes! You got it!" If incorrect, then the seconds would be deducted 
  if (clickTimeout) {
   return;
