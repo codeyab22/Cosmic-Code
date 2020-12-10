@@ -1,9 +1,7 @@
 //Adia's Cosmic Code Quiz 
 console.log("script");
-function initalquiz() {
-var timeleft = 0;
-   
-  //Declaring variables currentquestion and score, along with mytarget.addEventListeners.    
+
+ //Declaring variables currentquestion and score, along with mytarget.addEventListeners.    
 var currentquestion = document.getElementById("currentquestion");
 var score = document.getElementById("score");  
      
@@ -16,7 +14,8 @@ var submitbutton = document.getElementById("submit-initials");
 var startbutton = document.getElementById("startbutton");
 var starttimer = document.getElementById("starttimer");
 var endtimer = document.getElementById("endtimer")
-var startquiz = document.getElementById("start");
+var startquiz = document.getElementById("startquiz");
+var resetquiz = document.getElementById("resetquiz");
 
 var highScores =[]
  if (JSON.parse(localStorage.getItem('scores')) !== null) {
@@ -29,6 +28,10 @@ var score = 0;
 var secondsLeft = 75;
 var currentindex = 0;
 }
+function initalquiz() {
+var timeleft = 0;
+   
+ 
 
 // Formed a startbutton and submitbutton function, declaring variables with an ID element
 function startbutton() {
@@ -38,6 +41,8 @@ var startbutton = document.getElementById("id-of-dom-item");
 function submitbutton() {
  var submitbutton = document.getElementById("id-of-dom-item");
 }
+function resetquiz() {
+   var resetquiz = docment.getElementById("id-of-dom-item");
 
 //Formed a startquiz function
 function startquiz () {
@@ -238,8 +243,9 @@ submitbutton.addEventListener("click",submit-initials);
 startbutton.addEventListener("click",startbutton);
 startbutton.addEventListener("click",startquiz);  
 score.addEventListener("click",function() {
-score.addEventListener("click",score)
- currentquestion.addEventListener("click",currentquestion)
+score.addEventListener("click",score);
+currentquestion.addEventListener("click",currentquestion);
+resetquiz.addEventListener("click",resetquiz);
 })};
 
 initalquiz();
