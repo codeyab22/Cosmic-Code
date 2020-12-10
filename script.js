@@ -27,7 +27,6 @@ var currentquestion = 1;
 var score = 0;
 var secondsLeft = 75;
 var currentindex = 0;
-}
 
 //Formed a startbutton with mytarget.addeventlistener
 function bindStartButton() {
