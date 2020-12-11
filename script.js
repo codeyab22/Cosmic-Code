@@ -32,7 +32,7 @@ var currentindex = 0;
 function bindStartButton() {
     var startbtn = document.getElementById("begin");
 startbtn.addEventListener("click", function () {
-  console.log("Start Quiz!")
+  console.log("Start Quiz!");
 }}
                           
 function initalquiz() {
