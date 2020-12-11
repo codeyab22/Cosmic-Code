@@ -33,7 +33,7 @@ function bindStartButton() {
     var startbtn = document.getElementById("begin");
 startbtn.addEventListener("click", function () {
   console.log("Start Quiz!");
-}}
+})}
                           
 function initalquiz() {
 var timeleft = 0;
