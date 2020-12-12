@@ -246,23 +246,22 @@ paragraph.innerHTML = "Initials: " + highScores[i].initials + "   Score: " + hig
   
 // Formed add.Eventlisteners for functions at the bottom of my code
 submitbtn.addEventListener("click", function () {
- console.log(Submitted!)
- }
+ console.log("Submitted!")
+ }}
              
 startbtn.addEventListener("click",startquiz); 
- console.log(Begin!)
-}
+ console.log("Begin!")
                            
 score.addEventListener("click",function() {
- console.log(This score is yours!)
+ console.log("This score is yours!")
 }
  
 currentquestion.addEventListener("click", function () {
- console.log(Next Question...)
+ console.log("Next Question...")
 }
                                  
 resetquiz.addEventListener("click", function () {
- console.log(Restart!)
+ console.log("Restart!")
 })};
 
 initalquiz();
