@@ -10,11 +10,11 @@ $(document).ready(function(){
 
 //Declaring variables currentquestion and score, along with mytarget.addEventListeners.    
 var currentquestion = $("#currentquestion");
-$(".score").onclick(function() {
+$(".currentquestion").onclick(function() {
     console.log("This score is yours!");
     })
 var score = $("#score");  
-$(".currentquestion").onclick(function () {
+$(".score").onclick(function () {
     console.log("Next Question...");
     },
     
