@@ -7,3 +7,5 @@ My motivation is to make sure that everything is in order with logic and accurat
 I would like to build my project to increase mobility and speed for this process. Also, I would build my working with function skills. 
 
 Check out it and play this code game quiz: https://codeyab22.github.io/Cosmic-Code-Quiz/
+This is chic layout of my website:
+![image](https://drive.google.com/uc?export=view&id=1uOAUk04i1xkt7tAGtas7CrI9xPmRvbkg)
