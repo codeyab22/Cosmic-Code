@@ -151,7 +151,7 @@ $("#id row").append("column");
 button = $("#id button");
 $(".class button").attr("class","btn btn-primary");
  $(".class button").attr("type","button");
- $(button).html("questions[currentquestion-1].choices[i]");
+ $(".class button").html("questions[currentquestion-1].choices[i]");
  $("#id column").append("button");
  $(".class button").click(function() {
  
