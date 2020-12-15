@@ -1,3 +1,4 @@
+//Adia's Cosmic Code Quiz
 $(document).ready(function(){
      $("#id begin").click();
      $("#id submit-initials").click();
