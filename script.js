@@ -1,5 +1,7 @@
 //Adia's Cosmic Code Quiz
 
+//Adia's Cosmic Code Quiz
+
 $(document).ready(function(){
     $("#begin").click();
     $("#submit-initials").click();
@@ -8,11 +10,11 @@ $(document).ready(function(){
 
 //Declaring variables currentquestion and score, along with mytarget.addEventListeners.    
 var currentquestion = $("#currentquestion");
-$(".score").click(function() {
+$(".score").onclick(function() {
     console.log("This score is yours!");
     })
 var score = $("#score");  
-$(".currentquestion").click(function () {
+$(".currentquestion").onclick(function () {
     console.log("Next Question...");
     },
     
@@ -53,13 +55,13 @@ var timeleft = 0;
 
 function submitbtn() {
 var submitbtn = $("#submit-initials");
-$(".submitbtn").click(function () {
+$(".submitbtn").onclick(function () {
     console.log("Submitted!");
     },
 
 function resetquiz() {
   var resetquiz = $("#resetquiz");
-  $(".resetquiz").click(function () {
+  $(".resetquiz").onclick(function () {
     console.log("Restart!");
     })
 }
