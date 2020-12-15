@@ -8,4 +8,4 @@ I would like to build my project to increase mobility and speed for this process
 
 Check out it and play this code game quiz: https://codeyab22.github.io/Cosmic-Code-Quiz/
 This is chic layout of my website:
-![image](https://drive.google.com/uc?export=view&id=1uOAUk04i1xkt7tAGtas7CrI9xPmRvbkg)
+![image](https://drive.google.com/uc?export=view&id=11R6B0yG_gEaL8bEJBfXcO3gbMH7rhh3s)
