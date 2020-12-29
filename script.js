@@ -43,8 +43,8 @@ var currentindex = 0;
 
 //Formed a startbutton with mytarget.addeventlistener
 function bindStartButton() {
-   var startbtn = $("#begin");
-$(".startbtn").click(function () {
+var startbtn = $("#begin");
+ $(".startbtn").click(function () {
  console.log("Start Quiz!");
 })}
                          
@@ -52,16 +52,14 @@ var timeleft = 0;
   
 
 // Formed ,submitbutton functions, declaring variables with an ID element
-
+$(".submitbtn").onclick(function () {
 function submitbtn() {
 var submitbtn = $("#submit-initials");
-$(".submitbtn").onclick(function () {
     console.log("Submitted!");
     },
-
+ $(".resetquiz").onclick(function () {
 function resetquiz() {
   var resetquiz = $("#resetquiz");
-  $(".resetquiz").onclick(function () {
     console.log("Restart!");
     })
 }
