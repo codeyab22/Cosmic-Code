@@ -19,7 +19,7 @@ $(".score").onclick(function () {
     },
     
 //Declare the variables for Code Quiz-This is the puescode
-var cosmiccodequiz = $("#cosmic code quiz");                                
+var cosmiccodequiz = $("#cosmiccodequiz");                                
 var questionGoSubmit = $("#results");
 var timeleft = $("#timeleft");
 var challengequestions = $("#challengequestions.length");
