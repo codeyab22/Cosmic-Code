@@ -261,7 +261,7 @@ var paragraph = $("<element div>")
 $("#paragraph").html("Initials: " + highScores[i].initials + "   Score: " + highScores[i].highScore);
 $("#column2").append("paragraph");
 
-return initalquiz();
+initalquiz();
 }
 
 
