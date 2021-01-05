@@ -42,7 +42,7 @@ var currentindex = 0;
 //Formed a startbutton with mytarget.addeventlistener
 function bindStartButton() {
 var startbtn = $("#begin");
- $(".startbtn").click(function () {
+ $(".startbtn").onclick(function () {
  console.log("Start Quiz!");
 })}
                          
