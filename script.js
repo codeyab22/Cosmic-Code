@@ -15,7 +15,9 @@ var score = $("#score");
 $(".score").onclick(function () {
     console.log("Next Question...");
     })
-    
+var highscoreButton = $("#highscore-button");
+("highscoreButton").onclick(function() {
+    console.log("Scores revealed!);
 //Declare the variables for Code Quiz-This is the puescode
 var cosmiccodequiz = $("#cosmiccodequiz");                                
 var questionGoSubmit = $("#results");
