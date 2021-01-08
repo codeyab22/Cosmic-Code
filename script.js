@@ -1,7 +1,7 @@
 //Adia's Cosmic Code Quiz
 //Attached all my listeners inside of the ready function for jquery 
 $(document).ready(function(){
-    $(".currentquestion")..on("click", function () { ... });
+    $(".currentquestion").on("click", function () { ... });
     console.log("This score is yours!");
     });
     $(".score").onclick(function () {
