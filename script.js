@@ -6,7 +6,7 @@ $(document).ready(function(){
     console.log("This score is yours!");
     });
 
-    $(".score").onclick(function () {
+    $(".score").on("click", function () {
     console.log("Next Question...");
     });
     
@@ -29,9 +29,7 @@ $(document).ready(function(){
 
 //Declaring variables currentquestion and score,.    
 var currentquestion = $("#currentquestion");
-
 var score = $("#score");  
-
 var highscoreButton = $("#highscore-button");
 
     
