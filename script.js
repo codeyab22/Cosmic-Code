@@ -1,24 +1,28 @@
 //Adia's Cosmic Code Quiz
 
 $(document).ready(function(){
+    $(".currentquestion")..on("click", function () { ... });
+    console.log("This score is yours!");
+    });
+    $(".score").onclick(function () {
+    console.log("Next Question...");
+    });
+    ("highscoreButton").on("click", function () {
+    console.log("Scores revealed!);
+   });
     $("#begin").click();
     $("#submit-initials").click();
 });;
+    
    console.log("script");
 
 //Declaring variables currentquestion and score, along with mytarget.addEventListeners.    
 var currentquestion = $("#currentquestion");
-$(".currentquestion").onclick(function() {
-    console.log("This score is yours!");
-    })
+
 var score = $("#score");  
-$(".score").onclick(function () {
-    console.log("Next Question...");
-    })
+
 var highscoreButton = $("#highscore-button");
-("highscoreButton").onclick(function() {
-    console.log("Scores revealed!);
-   })
+
     
 //Declare the variables for Code Quiz-This is the puescode
 var cosmiccodequiz = $("#cosmiccodequiz");                                
@@ -67,7 +71,6 @@ console.log("Restart!");
 })
 //Formed a startquiz function
 })
-
 
 function startquiz () {
 $(".beginquiz").attr("class","container d-none");
