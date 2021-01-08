@@ -17,7 +17,7 @@ $(document).ready(function(){
     console.log("Submitted!");
     });  
         
-     S(".resetquiz").on("click", function () {
+     $(".resetquiz").on("click", function () {
      console.log("Restart!");
     });
 
