@@ -1,15 +1,19 @@
+
 //Adia's Cosmic Code Quiz
 //Attached all my listeners inside of the ready function for jquery 
 $(document).ready(function(){
-    $(".currentquestion").on("click", function () { ... });
+    $(".currentquestion").on("click", function () {  });
     console.log("This score is yours!");
     });
+
     $(".score").onclick(function () {
     console.log("Next Question...");
     });
+    
     ("highscoreButton").on("click", function () {
-    console.log("Scores revealed!);
+    console.log("Scores revealed!");
    });
+
    $(".submitbtn").onclick(function () {
     console.log("Submitted!");
     });  
@@ -17,14 +21,13 @@ $(document).ready(function(){
      S(".resetquiz").onclick(function () {
      console.log("Restart!");
     });
-        
     $("#begin").click();
-    $("#submit-initials").click();
-});;
-    
-   console.log("script");
+    $("#submit-initials").click();    
+   
+   //consolelog to load the script of the page
+    console.log("script");
 
-//Declaring variables currentquestion and score, along with mytarget.addEventListeners.    
+//Declaring variables currentquestion and score,.    
 var currentquestion = $("#currentquestion");
 
 var score = $("#score");  
@@ -73,9 +76,8 @@ var submitbtn = $("#submit-initials");
 function resetquiz() {
   var resetquiz = $("#resetquiz");
 }
-})
 //Formed a startquiz function
-})
+
 
 function startquiz () {
 $(".beginquiz").attr("class","container d-none");
@@ -275,6 +277,3 @@ $("#column2").append("paragraph");
 
 initalquiz();
 }
-
-
-
