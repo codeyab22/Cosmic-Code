@@ -59,7 +59,7 @@ var currentindex = 0;
 //Formed a startbutton with mytarget.addeventlistener
 function bindStartButton() {
 var startbtn = $("#begin");
- $(".startbtn").onclick(function () {
+ $(".startbtn").on("click", function () {
  console.log("Start Quiz!");
 })}
                          
@@ -154,7 +154,7 @@ $(".button").attr("class","btn btn-primary");
 $(".button").attr("type","button");
 $(".button").html("questions[currentquestion-1].choices[i]");
 $("#column2").append("button");
-$(".class button").click(function() {
+$(".button").on("click", function () {
 
 //  When the user clicks one of the answer buttons, then it would have a display message "Yes! You got it!" If incorrect, then the seconds would be deducted 
 if (clickTimeout) {
@@ -176,7 +176,7 @@ $(".button").attr("class","btn btn-primary");
 $(".button").attr("type","button");
 $(".button").html("questions[currentquestion-1].choices[i]");
 $("#column").append("button");
-$(".button").click(function() {
+$(".button").on("click", function () {
 
 //  When the user clicks the anwers buttons, the message is displayed. If it is correct,  15 seconds is deducted from the timer
  if (clickTimeout) {
