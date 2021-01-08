@@ -21,10 +21,11 @@ $(document).ready(function(){
      S(".resetquiz").onclick(function () {
      console.log("Restart!");
     });
+
     $("#begin").click();
     $("#submit-initials").click();    
    
-   //consolelog to load the script of the page
+   //Added consolelog to load the script of the page
     console.log("script");
 
 //Declaring variables currentquestion and score,.    
@@ -135,7 +136,7 @@ column = $("<element div>");
 $(".column").attr("class","col-12");
 $("#row").append("column");
 
-header = $("#id h2");
+header = $("#h2");
 $(".header").html(questions[questionNum-1].title);
 $("#column").append("header");
 
