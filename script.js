@@ -1,4 +1,3 @@
-
 //Adia's Cosmic Code Quiz
 //Attached all my listeners inside of the ready function for jquery 
 $(document).ready(function(){
