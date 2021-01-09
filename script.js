@@ -45,7 +45,7 @@ var endtimer = $("#endtimer")
 var startquiz = $("#startquiz");
 var resetquiz = $("#resetquiz");
 
-var highScores =$("[]")
+ var highScores = []
 if (JSON.parse(localStorage.getItem('scores')) !== null) {
  highScores = JSON.parse(localStorage.getItem("scores"));
 }
