@@ -28,6 +28,7 @@ $(document).ready(function(){
     console.log("script");
 
 //Declaring variables currentquestion and score,.    
+var Numquestion = $("#Numquestion").textContent = 5;
 var currentquestion = $("#currentquestion");
 var score = $("#score");  
 var highscoreButton = $("#highscore-button");
@@ -64,7 +65,6 @@ var startbtn = $("#begin");
 })}
                          
 var timeleft = 0;
-  
 
 // Formed ,submitbutton functions, declaring variables with an ID element
 
