@@ -64,7 +64,7 @@ var startbtn = $("#begin");
  console.log("Start Quiz!");
 })}
                          
-var timeleft = 0;
+var timeleft = 75;
 
 // Formed ,submitbutton functions, declaring variables with an ID element
 
