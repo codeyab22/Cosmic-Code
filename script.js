@@ -28,7 +28,7 @@ $(document).ready(function(){
     console.log("script");
 
 //Declaring variables currentquestion and score,.    
-var Numquestion = $("#Numquestion").textContent = 5;
+var Numquestion = $("#Numquestion");
 var currentquestion = $("#currentquestion");
 var score = $("#score");  
 var highscoreButton = $("#highscore-button");
