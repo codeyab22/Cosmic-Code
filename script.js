@@ -28,7 +28,7 @@ $(document).ready(function(){
     console.log("script");
 
 //Declaring variables currentquestion and score,.    
-var questionNum = $("#questionNum");
+ $("#questionNum").text(5);
 var currentquestion = $("#currentquestion");
 var score = $("#score");  
 var highscoreButton = $("#highscore-button");
