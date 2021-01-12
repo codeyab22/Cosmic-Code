@@ -23,24 +23,16 @@
  </h2>
 <!--Link for Nav Bar> -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
- <div class="container navbar-container mx-0">
-<div class="row w-100">
- <div class="col-4 col-md-2">
-  <button type="button" id="highscore-button" class="btn btn-info">View Scores</button> 
-  <button type="button" id="resetquiz-button" class="btn btn-info">Restart</button>                                                               
- </div>
- <div class="col-3 col-md-7"></div>
- <div class="col-5 col-md-3">
-                            
- <div class="form-group row">
-  <label for="time-left" class="col-sm-7 col-form-label">Time Left!</label>
- <div class="col-sm-5">
- <div type="number" readonly class="form-control float-right" id="time-left">
- </div>
- </div>
+  <div class="container navbar-container mx-0 w-100 noShrink">
+    <div>
+        <button type="button" id="highscore-button" class="btn btn-info">View Scores</button>
+        <button type="button" id="resetquiz-button" class="btn btn-info">Restart</button>
+    </div>
+    <div class="mla">
+      <label for="time-left" class="">Time Left!</label>
+      <span type="number" readonly class="form-control float-right" id="time-left"></span>
+    </div>
   </div>
-  </div>
- </div>
 </nav>
  <div id="beginquiz" class="container">
  <div class="row mb-3">
@@ -88,7 +80,7 @@
  <div class="row">
 <div class="col-2"></div>
   <div id="highscore-table" class="col-8">
-     <div class="row">
+  <div class="row">
  <div class="col-12 text-center">
   <h2> highScores</h2>
   </div>
