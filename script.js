@@ -13,11 +13,11 @@ $(document).ready(function(){
     console.log("Scores revealed!");
    });
 
-   $(".submitbtn").on("click", function () {
+   $("#submitbtn").on("click", function () {
     console.log("Submitted!");
     });  
         
-     $(".resetquiz").on("click", function () {
+     $("#resetquiz").on("click", function () {
      console.log("Restart!");
     });
 
