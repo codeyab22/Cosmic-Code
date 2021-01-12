@@ -20,7 +20,14 @@
     justify-content: space-around;
     max-width: 90% !important;
 }
+.Start Quiz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /*nav*/
+
 #nav {
     
     display: block;
