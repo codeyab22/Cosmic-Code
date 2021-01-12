@@ -9,9 +9,6 @@
 .left {
     float: left;
 }
-.row {
-    display: flex;
-}
 .timeleft {
     flex-direction: row
 }
