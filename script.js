@@ -9,7 +9,7 @@ $(document).ready(function(){
     console.log("Next Question...");
     });
     
-    $(".highscoreButton").on("click", function () {
+    $("#highscoreButton").on("click", function () {
     console.log("Scores revealed!");
    });
 
