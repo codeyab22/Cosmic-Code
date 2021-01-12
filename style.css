@@ -11,6 +11,15 @@
     float: left;
 }
 
+.mla {
+    margin-left: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 90% !important;
+}
 /*nav*/
 #nav {
     
