@@ -28,7 +28,6 @@ $(document).ready(function(){
     console.log("script");
 
 //Declaring variables currentquestion and score,.    
- $("#questionNum").text(5);
 var currentquestion = $("#currentquestion");
 var score = $("#score");  
 var highscoreButton = $("#highscore-button");
@@ -135,7 +134,10 @@ column = $("<element div>");
 $(".column").attr("class","col-12");
 $("#row").append("column");
 
-header = $("#h2");
+//Formed a variable for questionNum and add a value
+ var questionNum = 5; 
+
+ header = $("#h2");
 $(".header").html(questions[questionNum-1].title);
 $("#column").append("header");
 
