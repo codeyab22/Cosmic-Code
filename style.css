@@ -9,6 +9,12 @@
 .left {
     float: left;
 }
+.container {
+    display: flex;
+}
+.timeleft {
+    flex-direction: row
+}
 /*nav*/
 #nav {
     display: block;
