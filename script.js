@@ -187,7 +187,7 @@ $(".button").on("click", function () {
 
 clickTimeOut = true;
 clearInterval(myInterval);
-var column = $(".cosmiccodequiz").children[0].children[1];
+var column = $("#cosmiccodequiz").children[0].children[1];
 var row = $("<element div>");
 $(".row").attr("class","row border-top");
 $("#column").append("row");
