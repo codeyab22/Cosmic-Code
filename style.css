@@ -16,7 +16,7 @@
 }
 
 .container {
-    display: flex;
+    display: block;
     justify-content: space-around;
     max-width: 90% !important;
 }
