@@ -34,7 +34,7 @@ var highscoreButton = $("#highscore-button");
 
     
 //Declare the variables for Code Quiz-This is the puescode
-var cosmiccodequiz = $("#cosmiccodequiz");                                
+var cosmicQuiz = $("#cosmicQuiz");                              
 var questionGoSubmit = $("#results");
 $("#time-left").text(75);
 var challengequestions = $("#challengequestions.length");
