@@ -141,7 +141,7 @@ $("#row").append("column");
 $(".header").html(questions[questionNum-1].title);
 $("#column").append("header");
 
-column = $(".class cosmiccodequiz").children[0].children[1];
+column = $("#cosmiccodequiz").children[0].children[1];
 for (var i=0; i<4; i++) {
 var row = $("<element div>");
 $(".row").attr("class","row mb-1");
