@@ -109,39 +109,39 @@ function CreateNewQuestion(currentquestion) {
 
 //  When the header forms a new question, it give possible answers
  $(".cosmiccodequiz").html("");
-row = $("<element div>");
+var row = $("<element div>");
 $(".class row").attr("class","row");
 $("#cosmiccodequiz").append("row");
 
-column = $("<element div>");
+var column = $("<element div>");
 $(".column").attr("class","col-0 col-sm-2");
 $("#row").append("column");
 
-column = $("<element div>");
+var column = $("<element div>");
 $(".column").attr("class","col-12 col-sm-8");
 $("#row").append("column");
 
-column = $("<element div>");
+var column = $("<element div>");
 $(".column").attr("class","col-0 col-sm-2");
 $("#row").append("column");
 
-column = $(".row").children[1];
-row = $("<element div>");
+var column = $(".row").children[1];
+var row = $("<element div>");
 $(".row").attr("class","row mb-3");
 $("#column").append("row");
 
-column = $("<element div>");
+var column = $("<element div>");
 $(".column").attr("class","col-12");
 $("#row").append("column");
 
 //Formed a variable for questionNum and add a value
  var questionNum = 5; 
 
- header = $("#h2");
+var header = $("#h2");
 $(".header").html(questions[questionNum-1].title);
 $("#column").append("header");
 
-column = $("#cosmiccodequiz").children[0].children[1];
+var column = $("#cosmiccodequiz").children[0].children[1];
 for (var i=0; i<4; i++) {
 var row = $("<element div>");
 $(".row").attr("class","row mb-1");
@@ -151,7 +151,7 @@ var column2 = $("<element div>");
 (".column").attr("class","col-12");
 ("#row").append("column2");
 
-button = $("#button");
+var button = $("#button");
 $(".button").attr("class","btn btn-primary");
 $(".button").attr("type","button");
 $(".button").html("questions[currentquestion-1].choices[i]");
@@ -164,16 +164,16 @@ if (clickTimeout) {
 }
 clickTimeOut = true;
 clearInterval(myInterval);
-column = $(".cosmiccodequiz").children[0].children[1];
-row = $("<element div>");
+var column = $("#cosmiccodequiz").children[0].children[1];
+var row = $("<element div>");
 $(".row").attr("class","row border-top"); 
 $("#column").append("row");
 
-column = $("<element div>");
+var column = $("<element div>");
 (".column").attr("class","col-12");
 $("#row").append("column");
 
-button = $("#button");
+var button = $("#button");
 $(".button").attr("class","btn btn-primary");
 $(".button").attr("type","button");
 $(".button").html("questions[currentquestion-1].choices[i]");
@@ -192,7 +192,7 @@ var row = $("<element div>");
 $(".row").attr("class","row border-top");
 $("#column").append("row");
 
-column = $("<element div>");
+var column = $("<element div>");
 $(".column").attr("class","col-12");
 $("#row").append("column");
 
