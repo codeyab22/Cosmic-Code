@@ -1,94 +1,92 @@
 <!DOCTYPE html>
 <html lang="en-us>
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <meta charset=" UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Adia's Cosmic Code Quiz</title>
 <!--Link for JQuery> -->
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> 
- <!--Link for Bootstrap> -->                                                                                                                                            
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
- integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!--Link for CSS Style> -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+<!--Link for Bootstrap> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--Link for CSS Style> -->
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 </body>
 <div="container">
- <div="jumbtron">
- <h2 class ="text-center">
- <strong>Welcome to Cosmic Code</strong>
+  <div="jumbtron">
+    <h2 class="text-center">
+  <strong>Welcome to Cosmic Code</strong>
  </div>
- </div>
- </h2>
-<!--Link for Nav Bar> -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container navbar-container mx-0 w-100 noShrink">
-    <div>
-        <button type="button" id="highscore-button" class="btn btn-info">View Scores</button>
-        <button type="button" id="resetquiz-button" class="btn btn-info">Restart</button>
-    </div>
-    <div class="mla">
-      <label for="time-left" class="">Time Left!</label>
-      <span type="number" readonly class="form-control float-right" id="time-left"></span>
-    </div>
+      </div>
+    </h2>
+ <!--Link for Nav Bar> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <div class="container navbar-container mx-0 w-100 noShrink">
+   <div>
+  <button type="button" id="highscore-button" class="btn btn-info">View Scores</button>
+ <button type="button" id="resetquiz-button" class="btn btn-info">Restart</button>
   </div>
-</nav>
+        <div class="mla">
+  <label for="time-left" class="">Time Left!</label>
+  <span type="number" readonly class="form-control float-right" id="time-left"></span>
+  </div>
+  </div>
+    </nav>
  <div id="beginquiz" class="container">
- <div class="row mb-3">
- <div class="col-12 text-center">
- <h1>Quiz</h1>
- </div>
- </div>
-  <div class="row mb-3">
-<div class="col-12 text-center">
-<p id="displayText">Watch the timer! Answer all the questions as soon the timer runs out!</p>
-    </div>
- </div>
+      <div class="row mb-3">
+   <div class="col-12 text-center">
+  <h1>Quiz</h1>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12 text-center">
+  <p id="displayText">Watch the timer! Answer all the questions as soon the timer runs out!</p>
+  </div>
+      </div>
  <div class="row">
   <div class="col-12 text-center">
- <button id="begin" type="button" class="btn btn-secondary btn-lg">Start Quiz</button>
+   <button id="begin" type="button" class="btn btn-secondary btn-lg">Start Quiz</button>
   </div>
- </div>
- </div>
- <div id="cosmiccodequiz" class="container d-none">
- 
- </div>
- <div id="score" class="container d-none">
- <div class="row">
- <div class="col-12 text-center">
-  <form>
- <div class="form-group row">
-  <label for="Results" class="col-sm-7 col-form-label">"Results"</label>
- <div class="col-sm-5">
-<div type="number" readonly class="form-control" id="final-score" placeholder="0">
- </div>
   </div>
-  </form>
+    </div>
+    <div id="cosmiccodequiz" class="container d-none">
+
+    </div>
+  <div id="score" class="container d-none">
+  <div class="row">
+  <div class="col-12 text-center">
  <form>
- <div class="form-group">
+   <div class="form-group">
+   <label for="final-score">"Results"</label>
+ <input type="number" readonly class="form-control" id="final-score" placeholder="0">
+ </input>
+                <hr>
  <label for="initials-entry">Initials</label>
  <input type="text" class="form-control" id="initials-entry" placeholder="Enter initials">
   </div>
- <button id="submit-initials" type="button" class="btn btn-primary">Submit</button>
+  <button id="submit-initials" type="button" class="btn btn-primary">Submit</button>
   </form>
+   </div>
+    </div>
  </div>
-  </div>
- </div>
-<div id="highscore-container" class="container d-none">
- <div class="row">
-<div class="col-2"></div>
-  <div id="highscore-table" class="col-8">
-  <div class="row">
- <div class="col-12 text-center">
-  <h2> highScores</h2>
-  </div>
- </div>
-  </div>
+    <div id="highscore-container" class="container d-none">
+      <div class="row">
   <div class="col-2"></div>
+ <div id="highscore-table" class="col-8">
+    <div class="row">
+  <div class="col-12 text-center">
+   <h2> highScores</h2>
   </div>
-</div>
- <script src="questions.js"></script>
-<script src="script.js"></script>
-</body>
-  </html>
+  </div>
+ </div>
+   <div class="col-2"></div>
+   </div>
+    </div>
+   <script src="questions.js"></script>
+    <script src="script.js"></script>
+    </body>
+
+</html>
