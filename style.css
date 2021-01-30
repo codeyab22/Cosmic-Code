@@ -80,3 +80,9 @@ button:hover {
 #quiz {
     text-align: center;
 }
+
+
+#optionContainer {
+    display: none;
+}
+Shared in
