@@ -104,8 +104,29 @@ $(document).ready(function () {
             startbtn.on("click", function () {
                 console.log("Start Quiz!");
                 var displayText = $('#displayText');
+                var optionContainer = $('#optionContainer')
+
+                var option1 = $('#option1')
+                var option2 = $('#option2')
+                var option3 = $('#option3')
+                var option4 = $('#option4')
+
+                // check if this is the first question
+                if(currentQuestion === 0) {
+                    setInterval(function(){
+                        $("#time-left").text(secondsLeft);
+                        secondsLeft--;
+                    }, 1000)
+                }
 
                 displayText.text(questions[currentQuestion].title)
+                optionContainer.show();
+
+                option1.text(questions[currentQuestion].choices[0])
+                option2.text(questions[currentQuestion].choices[1])
+                option3.text(questions[currentQuestion].choices[2])
+                option4.text(questions[currentQuestion].choices[3])
+
 
                 // currentQuestion = currentQuestion + 1
                 currentQuestion++;
@@ -122,9 +143,12 @@ $(document).ready(function () {
 
             // Formed ,submitbutton functions, declaring variables with an ID element
 
-            function submitbtn() {
-                var submitbtn = $("#submit-initials");
-            }
+          
+            $("#submit-initials").on('click', function() {
+                var initialsEntry = $('#initials-entry').val();
+
+                localStorage.setItem('initials', initialsEntry)
+            })
 
             function resetquiz() {
                 var resetquiz = $("#resetquiz");
