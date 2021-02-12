@@ -1,366 +1,397 @@
 //Adia's Cosmic Code Quiz
 //Attached all my listeners inside of the ready function for jquery 
 $(document).ready(function () {
-            $(".currentquestion").on("click", function () {
-                console.log("This score is yours!");
-            });
+    $(".currentquestion").on("click", function () {
+        console.log("This score is yours!");
+    });
 
-            $(".score").on("click", function () {
-                console.log("Next Question...");
-            });
+    $(".score").on("click", function () {
+        console.log("Next Question...");
+    });
 
-            $("#highscore-button").on("click", function () {
-                console.log("Scores revealed!");
-                var scoreDiv = $("#score");
+    $("#highscore-button").on("click", function () {
+        console.log("Scores revealed!");
+        var scoreDiv = $("#score");
 
-                scoreDiv.toggleClass('d-none');
-            });
+        scoreDiv.toggleClass('d-none');
+    });
 
-            $("#submitbtn").on("click", function () {
-                console.log("Submitted!");
-            });
+    $("#submitbtn").on("click", function () {
+        console.log("Submitted!");
+    });
 
-            $("#resetquiz").on("click", function () {
-                console.log("Restart!");
-            });
+    $("#resetquiz").on("click", function () {
+        console.log("Restart!");
+    });
 
-            $('#resetquiz-button').on('click', function() {
-                location.href = "index.html"
-            })
+    $('#resetquiz-button').on('click', function () {
+        location.href = "index.html"
+    })
 
-            $("#begin").click();
-            $("#submit-initials").click();
+    // this is the part where we check the answers!
+    $('.answerBtn').on('click', function (event) {
 
-            //Added consolelog to load the script of the page
-            console.log("script");
+        if ($(event.target).text() == questions[currentQuestion - 1].answer) {
+            alert('That is correct!')
+            theRealScore++;
+        } else {
+            alert('That is wrong!')
+            theRealScore--;
+        }
 
-            //Declaring variables currentquestion and score,.    
-            var currentquestion = $("#currentquestion");
-            var score = $("#score");
-            var highscoreButton = $("#highscore-button");
+        displayQuestion();
+    })
+
+    $("#begin").click();
+    $("#submit-initials").click();
+
+    //Added consolelog to load the script of the page
+    console.log("script");
+
+    //Declaring variables currentquestion and score,.    
+    var currentquestion = $("#currentquestion");
+    var score = $("#score");
+    var highscoreButton = $("#highscore-button");
+
+    var theRealScore = 0;
 
 
-            //Declare the variables for Code Quiz-This is the puescode
-            var cosmicQuiz = $("#cosmicQuiz");
-            var questionGoSubmit = $("#results");
-            $("#time-left").text(75);
-            var challengequestions = $("#challengequestions.length");
-            var submitbtn = $("#submit-initials");
-            var startbtn = $("#begin");
-            var starttimer = $("#starttimer");
-            var endtimer = $("#endtimer")
-            var startquiz = $("#startquiz");
-            var resetquiz = $("#resetquiz");
+    //Declare the variables for Code Quiz-This is the puescode
+    var cosmicQuiz = $("#cosmicQuiz");
+    var questionGoSubmit = $("#results");
+    $("#time-left").text(75);
+    var challengequestions = $("#challengequestions.length");
+    var submitbtn = $("#submit-initials");
+    var startbtn = $("#begin");
+    var starttimer = $("#starttimer");
+    var endtimer = $("#endtimer")
+    var startquiz = $("#startquiz");
+    var resetquiz = $("#resetquiz");
 
-            var highScores = []
-            if (JSON.parse(localStorage.getItem('scores')) !== null) {
-                highScores = JSON.parse(localStorage.getItem("scores"));
+    var highScores = []
+    if (JSON.parse(localStorage.getItem('scores')) !== null) {
+        highScores = JSON.parse(localStorage.getItem("scores"));
+    }
+
+    //Declaring time interval variables
+    var currentquestion = 1;
+    var score = 0;
+    var secondsLeft = 75;
+    var currentindex = 0;
+
+    /////////////// Code from tutor session /////////////////////
+    // from your questions.js
+    var questions = [{
+        title: "Primarily, inside which tag of an HTML document do you put the JavaScript?",
+        choices: ["<java>", "<body>", "<script>", "<img>"],
+        answer: "<script>"
+    },
+    {
+        title: "The condition in an if/else statement is enclosed within ______.",
+        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+        answer: "parentheses"
+    },
+    {
+        title: "What is the syntax for referencing an external script called 'abc.js'?",
+        choices: ["<script class='abc.js'>", "<script href='abc.js'>", "<script link='abc.js'>", "<script src='abc.js'>"],
+        answer: "<script src='abc.js'>"
+    },
+    {
+        title: "Which type of pop up box will allow a user to type a response?",
+        choices: ["input", "prompt", "alert", "confirm"],
+        answer: "prompt"
+    },
+    {
+        title: "What is a DOM in JavaScript?",
+        choices: ["Data of Mine", "Document of Master", "Data Object Modal", "Document Object Model"],
+        answer: "Document Object Model"
+    },
+    {
+        title: "Is JS case-sensitive?",
+        choices: ["Yes", "No", "I have no clue", "Only when it feels like it."],
+        answer: "Yes"
+    },
+    ];
+
+    var currentQuestion = 0;
+    //Formed a startbutton with mytarget.addeventlistener
+    // function bindStartButton() {
+    var startbtn = $("#begin");
+    startbtn.on("click", function () {
+        console.log("Start Quiz!");
+        displayQuestion();
+    })
+
+    function displayQuestion() {
+        if (currentQuestion <= questions.length - 1) {
+            var displayText = $('#displayText');
+            var optionContainer = $('#optionContainer')
+
+            var option1 = $('#option1')
+            var option2 = $('#option2')
+            var option3 = $('#option3')
+            var option4 = $('#option4')
+
+            // check if this is the first question
+            if (currentQuestion === 0) {
+                setInterval(function () {
+                    $("#time-left").text(secondsLeft);
+                    secondsLeft--;
+                }, 1000)
             }
 
-            //Declaring time interval variables
-            var currentquestion = 1;
-            var score = 0;
-            var secondsLeft = 75;
-            var currentindex = 0;
+            displayText.text(questions[currentQuestion].title)
+            optionContainer.show();
 
-            /////////////// Code from tutor session /////////////////////
-            // from your questions.js
-            var questions = [{
-                    title: "Primarily, inside which tag of an HTML document do you put the JavaScript?",
-                    choices: ["<java>", "<body>", "<script>", "<img>"],
-                    answer: "<script>"
-                },
-                {
-                    title: "The condition in an if/else statement is enclosed within ______.",
-                    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-                    answer: "parentheses"
-                },
-                {
-                    title: "What is the syntax for referencing an external script called 'abc.js'?",
-                    choices: ["<script class='abc.js'>", "<script href='abc.js'>", "<script link='abc.js'>", "<script src='abc.js'>"],
-                    answer: "<script src='abc.js'>"
-                },
-                {
-                    title: "Which type of pop up box will allow a user to type a response?",
-                    choices: ["input", "prompt", "alert", "confirm"],
-                    answer: "prompt"
-                },
-                {
-                    title: "What is a DOM in JavaScript?",
-                    choices: ["Data of Mine", "Document of Master", "Data Object Modal", "Document Object Model"],
-                    answer: "Document Object Model"
-                },
-                {
-                    title: "Is JS case-sensitive?",
-                    choices: ["Yes", "No", "I have no clue", "Only when it feels like it."],
-                    answer: "Yes"
-                },
-            ];
+            option1.text(questions[currentQuestion].choices[0])
+            option2.text(questions[currentQuestion].choices[1])
+            option3.text(questions[currentQuestion].choices[2])
+            option4.text(questions[currentQuestion].choices[3])
 
-            var currentQuestion = 0;
-            //Formed a startbutton with mytarget.addeventlistener
-            // function bindStartButton() {
-            var startbtn = $("#begin");
-            startbtn.on("click", function () {
-                console.log("Start Quiz!");
-                var displayText = $('#displayText');
-                var optionContainer = $('#optionContainer')
+            currentQuestion++;
+        }
+        // currentQuestion = currentQuestion + 1
+        else {
+            // end the quiz
+            alert('You have reached the end of the quiz!')
+            displayScore();
+        }
+    }
 
-                var option1 = $('#option1')
-                var option2 = $('#option2')
-                var option3 = $('#option3')
-                var option4 = $('#option4')
+    function displayScore() {
+        $('#final-score').val(theRealScore);
+        var scoreDiv = $("#score");
 
-                // check if this is the first question
-                if(currentQuestion === 0) {
-                    setInterval(function(){
-                        $("#time-left").text(secondsLeft);
-                        secondsLeft--;
-                    }, 1000)
+        scoreDiv.toggleClass('d-none');
+    }
+    // }
+
+    ///////////////////////////////////////////////////////////////
+
+    // bindStartButton()
+
+    var timeleft = 0;
+
+    // Formed ,submitbutton functions, declaring variables with an ID element
+
+
+    $("#submit-initials").on('click', function () {
+        var initialsEntry = $('#initials-entry').val();
+
+        localStorage.setItem('initials', initialsEntry)
+    })
+
+    function resetquiz() {
+        var resetquiz = $("#resetquiz");
+    }
+    //Formed a startquiz function
+
+    function startquiz() {
+        $(".beginquiz").attr("class", "container d-none");
+        //Declare row, column, header, button variables.
+        var row = null;
+        var column = null;
+        var header = null;
+        var button = null;
+        $(".cosmiccodequiz").attr("class", "container");
+        timeleft = challengequestions * 15;
+        $(".timeleft").attr("value", timeleft);
+
+        //  Method for stopping the interval 
+        //Formed a setInterval function
+        var myInterval = $setInterval(function () {
+            if (timeleft < 1) {
+                clearInterval(myInterval);
+
+
+                //  When timer ends, then the user put their initials
+                $(".cosmiccodequiz").attr("class", "container d-none");
+                $(".score").attr("class", "container");
+                $(".submitbtn").attr("class", "container");
+                return;
+            }
+            timeleft = timeleft - 1;
+            $(".timeleft").attr("value", timeleft);
+        }, 1000);
+
+    }
+    var TimeOut = false;
+
+    function CreateNewQuestion(currentquestion) {
+
+        //  When the header forms a new question, it give possible answers
+        $(".cosmiccodequiz").html("");
+        var row = $("<element div>");
+        $(".class row").attr("class", "row");
+        $("#cosmiccodequiz").append("row");
+
+        var column = $("<element div>");
+        $(".column").attr("class", "col-0 col-sm-2");
+        $("#row").append("column");
+
+        var column = $("<element div>");
+        $(".column").attr("class", "col-12 col-sm-8");
+        $("#row").append("column");
+
+        var column = $("<element div>");
+        $(".column").attr("class", "col-0 col-sm-2");
+        $("#row").append("column");
+
+        var column = $(".row").children[1];
+        var row = $("<element div>");
+        $(".row").attr("class", "row mb-3");
+        $("#column").append("row");
+
+        var column = $("<element div>");
+        $(".column").attr("class", "col-12");
+        $("#row").append("column");
+
+        //Formed a variable for questionNum and add a value
+        var questionNum = 5;
+
+        var header = $("#h2");
+        $(".header").html(questions[questionNum - 1].title);
+        $("#column").append("header");
+
+        var column = $("#cosmiccodequiz").children[0].children[1];
+        for (var i = 0; i < 4; i++) {
+            var row = $("<element div>");
+            $(".row").attr("class", "row mb-1");
+            ("#column").append("row");
+
+            var column2 = $("<element div>");
+            (".column").attr("class", "col-12");
+            ("#row").append("column2");
+
+            var button = $("#button");
+            $(".button").attr("class", "btn btn-primary");
+            $(".button").attr("type", "button");
+            $(".button").html("questions[currentquestion-1].choices[i]");
+            $("#column2").append("button");
+            $(".button").on("click", function () {
+
+                //  When the user clicks one of the answer buttons, then it would have a display message "Yes! You got it!" If incorrect, then the seconds would be deducted 
+                if (clickTimeout) {
+                    return;
                 }
+                clickTimeOut = true;
+                clearInterval(myInterval);
+                var column = $("#cosmiccodequiz").children[0].children[1];
+                var row = $("<element div>");
+                $(".row").attr("class", "row border-top");
+                $("#column").append("row");
 
-                displayText.text(questions[currentQuestion].title)
-                optionContainer.show();
+                var column = $("<element div>");
+                (".column").attr("class", "col-12");
+                $("#row").append("column");
 
-                option1.text(questions[currentQuestion].choices[0])
-                option2.text(questions[currentQuestion].choices[1])
-                option3.text(questions[currentQuestion].choices[2])
-                option4.text(questions[currentQuestion].choices[3])
+                var button = $("#button");
+                $(".button").attr("class", "btn btn-primary");
+                $(".button").attr("type", "button");
+                $(".button").html("questions[currentquestion-1].choices[i]");
+                $("#column").append("button");
+                $(".button").on("click", function () {
 
-
-                // currentQuestion = currentQuestion + 1
-                currentQuestion++;
-
-
-            })
-            // }
-
-            ///////////////////////////////////////////////////////////////
-
-            // bindStartButton()
-
-            var timeleft = 0;
-
-            // Formed ,submitbutton functions, declaring variables with an ID element
-
-          
-            $("#submit-initials").on('click', function() {
-                var initialsEntry = $('#initials-entry').val();
-
-                localStorage.setItem('initials', initialsEntry)
-            })
-
-            function resetquiz() {
-                var resetquiz = $("#resetquiz");
-            }
-            //Formed a startquiz function
-
-            function startquiz() {
-                $(".beginquiz").attr("class", "container d-none");
-                //Declare row, column, header, button variables.
-                var row = null;
-                var column = null;
-                var header = null;
-                var button = null;
-                $(".cosmiccodequiz").attr("class", "container");
-                timeleft = challengequestions * 15;
-                $(".timeleft").attr("value", timeleft);
-
-                //  Method for stopping the interval 
-                //Formed a setInterval function
-                var myInterval = $setInterval(function () {
-                    if (timeleft < 1) {
-                        clearInterval(myInterval);
-
-
-                        //  When timer ends, then the user put their initials
-                        $(".cosmiccodequiz").attr("class", "container d-none");
-                        $(".score").attr("class", "container");
-                        $(".submitbtn").attr("class", "container");
+                    //  When the user clicks the anwers buttons, the message is displayed. If it is correct,  15 seconds is deducted from the timer
+                    if (clickTimeout) {
                         return;
                     }
-                    timeleft = timeleft - 1;
-                    $(".timeleft").attr("value", timeleft);
-                }, 1000);
 
-            }
-            var TimeOut = false;
-
-            function CreateNewQuestion(currentquestion) {
-
-                //  When the header forms a new question, it give possible answers
-                $(".cosmiccodequiz").html("");
-                var row = $("<element div>");
-                $(".class row").attr("class", "row");
-                $("#cosmiccodequiz").append("row");
-
-                var column = $("<element div>");
-                $(".column").attr("class", "col-0 col-sm-2");
-                $("#row").append("column");
-
-                var column = $("<element div>");
-                $(".column").attr("class", "col-12 col-sm-8");
-                $("#row").append("column");
-
-                var column = $("<element div>");
-                $(".column").attr("class", "col-0 col-sm-2");
-                $("#row").append("column");
-
-                var column = $(".row").children[1];
-                var row = $("<element div>");
-                $(".row").attr("class", "row mb-3");
-                $("#column").append("row");
-
-                var column = $("<element div>");
-                $(".column").attr("class", "col-12");
-                $("#row").append("column");
-
-                //Formed a variable for questionNum and add a value
-                var questionNum = 5;
-
-                var header = $("#h2");
-                $(".header").html(questions[questionNum - 1].title);
-                $("#column").append("header");
-
-                var column = $("#cosmiccodequiz").children[0].children[1];
-                for (var i = 0; i < 4; i++) {
+                    clickTimeOut = true;
+                    clearInterval(myInterval);
+                    var column = $("#cosmiccodequiz").children[0].children[1];
                     var row = $("<element div>");
-                    $(".row").attr("class", "row mb-1");
-                    ("#column").append("row");
+                    $(".row").attr("class", "row border-top");
+                    $("#column").append("row");
 
-                    var column2 = $("<element div>");
-                    (".column").attr("class", "col-12");
-                    ("#row").append("column2");
+                    var column = $("<element div>");
+                    $(".column").attr("class", "col-12");
+                    $("#row").append("column");
 
-                    var button = $("#button");
-                    $(".button").attr("class", "btn btn-primary");
-                    $(".button").attr("type", "button");
-                    $(".button").html("questions[currentquestion-1].choices[i]");
-                    $("#column2").append("button");
-                    $(".button").on("click", function () {
-
-                        //  When the user clicks one of the answer buttons, then it would have a display message "Yes! You got it!" If incorrect, then the seconds would be deducted 
-                        if (clickTimeout) {
-                            return;
+                    var paragraph = $("#p");
+                    $("#column").append("paragraph");
+                    if ($("this").innerHTML === questions[currentquestion - 1].answer) {
+                        $("#paragraph").html("Yes, You got it!");
+                    } else {
+                        $("#paragraph").html("You missed that one. Try it again");
+                        timeleft = timeleft - 15;
+                        if (timeleft < 0) {
+                            timeleft = 0;
                         }
-                        clickTimeOut = true;
-                        clearInterval(myInterval);
-                        var column = $("#cosmiccodequiz").children[0].children[1];
-                        var row = $("<element div>");
-                        $(".row").attr("class", "row border-top");
-                        $("#column").append("row");
-
-                        var column = $("<element div>");
-                        (".column").attr("class", "col-12");
-                        $("#row").append("column");
-
-                        var button = $("#button");
-                        $(".button").attr("class", "btn btn-primary");
-                        $(".button").attr("type", "button");
-                        $(".button").html("questions[currentquestion-1].choices[i]");
-                        $("#column").append("button");
-                        $(".button").on("click", function () {
-
-                                //  When the user clicks the anwers buttons, the message is displayed. If it is correct,  15 seconds is deducted from the timer
-                                if (clickTimeout) {
-                                    return;
-                                }
-
-                                clickTimeOut = true;
-                                clearInterval(myInterval);
-                                var column = $("#cosmiccodequiz").children[0].children[1];
-                                var row = $("<element div>");
-                                $(".row").attr("class", "row border-top");
-                                $("#column").append("row");
-
-                                var column = $("<element div>");
-                                $(".column").attr("class", "col-12");
-                                $("#row").append("column");
-
-                                var paragraph = $("#p");
-                                $("#column").append("paragraph");
-                                if ($("this").innerHTML === questions[currentquestion - 1].answer) {
-                                    $("#paragraph").html("Yes, You got it!");
-                                } else {
-                                    $("#paragraph").html("You missed that one. Try it again");
-                                    timeleft = timeleft - 15;
-                                    if (timeleft < 0) {
-                                        timeleft = 0;
-                                    }
-                                }
-                            }
-
-                        ).$(".timeleft").attr("value", timeleft);
-                        currentquestion++;
-                        if (currentquestion > challengequestions.length) {
-                            score = timeleft;
-                        }
-
-                        //Formed a TimeOut function
-                        TimeOut(function () {
-                            // When the answer is selected, it moves on to new question after timer hits 2 seconds
-                            if (currentquestion > challengequestions) {
-                                //  results
-                                $(".cosmiccodequiz").attr("class", "container d-none");
-                                $(".submitbtn").attr("class", "container");
-                                $(".score").attr("value", score);
-                            } else {
-                                CreateNewQuestion(currentquestion);
-                                TimeOut = false;
-
-                                myInterval = $setInterval(function () {
-                                    if (timeleft < 1) {
-                                        clearInterval(myInterval);
-                                        $(".cosmiccodequiz").attr("class", "container d-none");
-                                        $(".score").attr("class", "container");
-                                        return;
-                                    }
-
-                                    timeleft = timeleft - 1;
-                                    $(".class timeleft").attr("value", timeleft);
-                                }, 1000);
-                            }
-                        }, 2000);
-                    });
+                    }
                 }
-            }
 
-            //Formed a function saveHighScore
-            function saveHighScore() {
-                var initials = $("#initials-entry");
-                var newHighScore = {
-                    initials: initialsEl.value,
-                    highScore: score
-                };
+                ).$(".timeleft").attr("value", timeleft);
+                currentquestion++;
+                if (currentquestion > challengequestions.length) {
+                    score = timeleft;
+                }
 
-                console.log("newHighScore");
-                highScores.push(newHighScore);
-                console.log("highScores");
-                localStorage.setItem("scores", JSON.stringify(highScores));
-            }
+                //Formed a TimeOut function
+                TimeOut(function () {
+                    // When the answer is selected, it moves on to new question after timer hits 2 seconds
+                    if (currentquestion > challengequestions) {
+                        //  results
+                        $(".cosmiccodequiz").attr("class", "container d-none");
+                        $(".submitbtn").attr("class", "container");
+                        $(".score").attr("value", score);
+                    } else {
+                        CreateNewQuestion(currentquestion);
+                        TimeOut = false;
 
-            CreateNewQuestion(currentquestion);
-            var submitbtn = $("#submit-initials");
-            $(".cosmiccodequiz").attr("class", "container d-none");
-            $(".questionGoSubmit").attr("class", "container d-none");
-            $(".class score").attr("class", "container");
+                        myInterval = $setInterval(function () {
+                            if (timeleft < 1) {
+                                clearInterval(myInterval);
+                                $(".cosmiccodequiz").attr("class", "container d-none");
+                                $(".score").attr("class", "container");
+                                return;
+                            }
 
-            var column = $("#highscore-table");
-            for (i = 0; i < Highscores.length; i++) {
-                var row = $("<element div>");
-                $(".row").attr("class", "row mb-1");
-                $("#column").append("row");
-
-                var column2 = $("<element div>");
-                $(".column2").attr("class", "col-12 text-center");
-                ("#row").append("column2");
-
-                var paragraph = $("<element div>")
-                $("#paragraph").html("Initials: " + highScores[i].initials + "   Score: " + highScores[i].highScore);
-                $("#column2").append("paragraph");
-
-                initalquiz();
-            }
+                            timeleft = timeleft - 1;
+                            $(".class timeleft").attr("value", timeleft);
+                        }, 1000);
+                    }
+                }, 2000);
+            });
         }
-    
+    }
+
+    //Formed a function saveHighScore
+    function saveHighScore() {
+        var initials = $("#initials-entry");
+        var newHighScore = {
+            initials: initialsEl.value,
+            highScore: score
+        };
+
+        console.log("newHighScore");
+        highScores.push(newHighScore);
+        console.log("highScores");
+        localStorage.setItem("scores", JSON.stringify(highScores));
+    }
+
+    CreateNewQuestion(currentquestion);
+    var submitbtn = $("#submit-initials");
+    $(".cosmiccodequiz").attr("class", "container d-none");
+    $(".questionGoSubmit").attr("class", "container d-none");
+    $(".class score").attr("class", "container");
+
+    var column = $("#highscore-table");
+    for (i = 0; i < Highscores.length; i++) {
+        var row = $("<element div>");
+        $(".row").attr("class", "row mb-1");
+        $("#column").append("row");
+
+        var column2 = $("<element div>");
+        $(".column2").attr("class", "col-12 text-center");
+        ("#row").append("column2");
+
+        var paragraph = $("<element div>")
+        $("#paragraph").html("Initials: " + highScores[i].initials + "   Score: " + highScores[i].highScore);
+        $("#column2").append("paragraph");
+
+        initalquiz();
+    }
+}
+
 )
