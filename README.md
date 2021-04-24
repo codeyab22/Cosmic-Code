@@ -1,4 +1,6 @@
 # Cosmic-Code
+
+# About this Project
 This is my fourth project. This project is making a quiz and setting my timer. If you get the correct answer, the timer runs on it own. If it is incorrect, then the seconds of the timer is deducted.  I am defining my variables, creating functions, using methods to make sure that the buttons and the timer works properly. This is the activity that we previously went over and building  the timer together will give. 
 
 # User's Story
@@ -17,7 +19,7 @@ link of the repo: https://codeyab22.github.io/Cosmic-Code-Quiz/
 Link of the deployed website: https://codeyab22.github.io/Cosmic-Code-Quiz/
 
 This is chic layout of my website:
-![image](https://drive.google.com/uc?export=view&id=1w85Hi5xhy-4-3VZLZqvpSviy-rSVNAcv/)
+![image](https://drive.google.com/uc?export=view&id=1w85Hi5xhy-4-3VZLZqvpSviy-rSVNAcv)
 
 
 # Author(s)
